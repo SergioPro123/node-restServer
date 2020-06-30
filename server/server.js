@@ -10,9 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
-
-app.use(require('./routes/usuario').app);
-
+//Configuracion global de rutas
+app.use(require('./routes/index').app);
 
 let conectarDB = async() => {
     await mongoose.connect(process.env.URLDB, {
